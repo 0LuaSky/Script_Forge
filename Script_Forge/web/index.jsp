@@ -30,7 +30,7 @@
                 const chatLog = document.getElementById('chat-log');
 
                 // Adicione sua chave de API aqui
-                const apiKey = 'sk-proj-P8LT0wnsPzRjXyzOpKjYT3BlbkFJ2Vv8BH7Czhya0K8vSa3s';
+                const apiKey = 'chave da api do chat gpt';
                 const apiUrl = 'https://api.openai.com/v1/completions';
 
                 const response = await fetch(apiUrl, {
