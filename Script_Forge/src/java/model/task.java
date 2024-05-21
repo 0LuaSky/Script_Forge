@@ -1,9 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-
 public class task {
-    public static ArrayList<task> list = new ArrayList<>();
+    //public static ArrayList<Task> list = new ArrayList<>();
     
     private String title;
 

@@ -16,17 +16,17 @@
         <%@include file="WEB-INF/jspf/head-libs.jspf" %>
         <%@include file="WEB-INF/jspf/body-libs.jspf" %>
         
-        <div style="margin-top: 100px; margin-left: 1%; margin-right: 1%;">
+        <div style="margin-top: 100px; margin-left: 2%; margin-right: 2%;">
             <h1>ChatGPT 4 API Test</h1>
-            <form id="chat-form">
-                <label for="mytext">Enter your message:</label>
-                <input type="text" id="mytext" style="width: 50%;" required>
-                <button type="submit">Submit</button>
+            <form>
+                <div class="mb-3">
+                    <label for="mytext" class="form-label">Insira uma descrição de como você quer que seja o jogo:</label>
+                        <input class="form-control" type="text" placeholder="Digite Aqui." aria-label="default input example" rows="20" style="width: 70%;">                  
+                        <textarea class="form-control"id="exampleFormControlTextarea1" rows="4" style="width: 70%;"></textarea>
+                    <div id="emailHelp" class="form-text">algo em baixo para alterar.</div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
             </form>
-            <div>
-                <h2>Response:</h2>
-                <textarea id="response" rows="20" style="width: 80%;" readonly></textarea>
-            </div>
             <script src="script.js"></script>
         </div>
     </body>

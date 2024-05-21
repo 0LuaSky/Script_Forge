@@ -40,11 +40,12 @@
                 <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
                     Script Forge
                 </h3>
+                <br>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
 
             
-            <div class="offcanvas-body">
+            <div class="offcanvas-body" style='font-size: 25px;'>
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <%if(userName!=null){%>
                         <li class="nav-item">
@@ -52,21 +53,28 @@
                                 <span class="navbar-text me-2">
                                     <%=userName%>
                                 </span>
+                                
                             </form>
                         </li>
-                        <li class="nav-item dropdown" >
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                historico?
+                                Historico
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Historico 1</a></li>
+                                <li><a class="dropdown-item" href="#">Historico 2</a></li>
+                                <li><a class="dropdown-item" href="#">Historico 3</a></li>
+                                <li><a class="dropdown-item" href="#">Historico 4</a></li>
+                                <li><a class="dropdown-item" href="#">Historico 5</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Ver mais</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style='position: absolute; margin-bottom: 10px; bottom: 0;'>
                             <form class="d-flex">
                                 <div class="sticky-bottom">
-                                    <span  class="navbar-text me-2 style='display: flex;'">
-                                        <button class="btn btn-outline-success" type="submit" name="session-logout">Sair</button>
+                                    <span  class="navbar-text me-2">
+                                        <button class="btn btn-outline-success" type="submit" name="session-logout" style='font-size: 25px;'> Sair </button>
                                     </span>
                                 </div>
                             </form>
