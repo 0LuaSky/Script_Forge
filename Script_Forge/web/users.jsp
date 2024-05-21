@@ -1,9 +1,3 @@
-<%-- 
-    Document   : users
-    Created on : 21 de mai. de 2024, 14:53:46
-    Author     : Fatec
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

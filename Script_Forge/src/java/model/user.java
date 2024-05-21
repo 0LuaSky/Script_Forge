@@ -8,7 +8,12 @@ public class user {
     private String passwordHash;
     
     public static String getCreateStatement() {
-        return 
+        return "CREATE TABLE IF NOT EXISTS users("
+                + "login VARCHAR(50) UNIQUE NOT NULL,"
+                + "name VARHCAR(200) NOT NULL,"
+                + "role VARCHAR(20) NOT NULL,"
+                + "password_hash VARCHAR NOT NULL"
+                + ")";
     }
 
     public user(long rowId, String name, String login, String role, String passwordHash) {
@@ -58,6 +63,5 @@ public class user {
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
-    
     
 }
