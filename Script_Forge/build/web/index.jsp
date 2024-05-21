@@ -25,6 +25,7 @@
             </form>
             <div>
                 <h2>Response:</h2>
+                <h2>Response:</h2>
                 <textarea id="response" rows="20" style="width: 80%;" readonly></textarea>
             </div>
             <script src="script.js"></script>
