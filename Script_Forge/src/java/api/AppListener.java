@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.sql.*;
-import model.user;
+import model.User;
 
 @WebListener
 public class AppListener implements ServletContextListener{
@@ -29,12 +29,12 @@ public class AppListener implements ServletContextListener{
             Statement s = c.createStatement();
             initializeLog += new Date() + ": Initializing database creation; ";
             initializeLog += "Creating Users table if not exists...";
-            s.execute(user.getCreateStatement());
-            if(user.getUsers().isEmpty()){
+            s.execute(User.getCreateStatement());
+            if(User.getUsers().isEmpty()){
                 initializeLog += "Adding default users...";
-                user.insertUser("admin", "Administrador", "ADMIN", "1234");
+                User.insertUser("admin", "Administrador", "ADMIN", "1234");
                 initializeLog += "Admin added; ";
-                user.insertUser("fulano", "Fulano da Silva", "USER", "1234");
+                User.insertUser("fulano", "Fulano da Silva", "USER", "1234");
                 initializeLog += "Fulano added; ";
             }
             initializeLog += "done; ";

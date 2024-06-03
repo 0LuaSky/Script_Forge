@@ -4,7 +4,7 @@ import api.AppListener;
 import java.util.ArrayList;
 import java.sql.*;
 
-public class user {
+public class User {
     private long rowId;
     private String name;
     private String login;
@@ -14,14 +14,14 @@ public class user {
     public static String getCreateStatement() {
         return "CREATE TABLE IF NOT EXISTS users("
                 + "login VARCHAR(50) UNIQUE NOT NULL,"
-                + "name VARHCAR(200) NOT NULL,"
+                + "name VARCHAR(200) NOT NULL,"
                 + "role VARCHAR(20) NOT NULL,"
                 + "password_hash VARCHAR NOT NULL"
                 + ")";
     }
     
-    public static ArrayList<user> getUsers() throws Exception {
-        ArrayList<user> list = new ArrayList<>();
+    public static ArrayList<User> getUsers() throws Exception {
+        ArrayList<User> list = new ArrayList<>();
         Connection con = AppListener.getConnection();
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT rowid, * from users");
@@ -31,7 +31,7 @@ public class user {
             String name = rs.getString("name");
             String role = rs.getString("role");
             String passwordHash = rs.getString("password_hash");
-            list.add(new user(rowId, login, name, role, passwordHash));
+            list.add(new User(rowId, login, name, role, passwordHash));
         }
         rs.close();
         stmt.close();
@@ -39,8 +39,8 @@ public class user {
         return list;
     }
     
-    public static user getUser(String login, String password) throws Exception {
-    user user = null;
+    public static User getUser(String login, String password) throws Exception {
+    User User = null;
     Connection con = AppListener.getConnection();
     String sql = "SELECT rowid, * from users WHERE login=? AND password_hash=?";
     PreparedStatement stmt = con.prepareStatement(sql);
@@ -52,17 +52,17 @@ public class user {
         String name = rs.getString("name");
         String role = rs.getString("role");
         String passwordHash = rs.getString("password_hash");
-        user = new user(rowId, login, name, role, passwordHash);
+        User = new User(rowId, login, name, role, passwordHash);
     }
     rs.close();
     stmt.close();
     con.close();
-    return user;
+    return User;
     }
     
     public static void insertUser(String login, String name, String role, String password) throws Exception{
         Connection con = AppListener.getConnection();
-        String sql = "INSERT INTO user(login, name, password_hash) " 
+        String sql = "INSERT INTO users(login, name, password_hash) " 
                 + "VALUES(?, ?, ?, ?)";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, login);
@@ -98,7 +98,7 @@ public class user {
         
     }
 
-    public user(long rowId, String name, String login, String role, String passwordHash) {
+    public User(long rowId, String name, String login, String role, String passwordHash) {
         this.rowId = rowId;
         this.name = name;
         this.login = login;
