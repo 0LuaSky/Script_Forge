@@ -62,7 +62,7 @@ public class User {
     
     public static void insertUser(String login, String name, String role, String password) throws Exception{
         Connection con = AppListener.getConnection();
-        String sql = "INSERT INTO users(login, name, role, password_hash) " 
+        String sql = "INSERT INTO users(login, name, password_hash) " 
                 + "VALUES(?, ?, ?, ?)";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, login);
@@ -76,7 +76,7 @@ public class User {
     
     public static void updateUser(String login, String name, String role, String password) throws Exception{
         Connection con = AppListener.getConnection();
-        String sql = "UPDATE users SET name=?, role=?, password_hash=?, login=?";
+        String sql = "UPDATE users SET name=?, role=?, password_hash=?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, name);
         stmt.setString(2, role);
