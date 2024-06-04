@@ -1,5 +1,7 @@
 package model;
 
+import model.*;
+
 public class task {
     //public static ArrayList<Task> list = new ArrayList<>();
     
