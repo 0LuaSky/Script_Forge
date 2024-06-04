@@ -5,7 +5,7 @@ const formMessage = document.querySelector("form");
 const model = "gpt-3.5-turbo-1106";
 
 const BASE_URL = "https://api.openai.com/v1/chat/completions";
-const API_KEY = "";
+const API_KEY = "apikey";
 
 const selectop01 = document.querySelector("#tag_01");
 const selectop02 = document.querySelector("#tag_02");
@@ -113,8 +113,7 @@ async function postMessageGPT(message, opt01, opt02, opt03, opt04, opt05, opt06,
     const body = {
         messages: [
             {
-                content:"Escreva um enredo para um jogo  de vidêo-game stilo " + opt01 + " " +  opt02 + " " + opt03 + " " + opt04 + " " + opt05 + " " +
-opt06 + " " + opt07 + " " + opt08 + " " + opt09 + " " + opt10 + " baseado em " + message,
+                content:"Escreva um enredo para um jogo " + opt01 + opt02 + opt03 + opt04 + opt05 + opt06 + opt07 + opt08 + opt09 + opt10 + " de vidêo-game baseado em " + message,
                 role: "system"
             }
         ],
