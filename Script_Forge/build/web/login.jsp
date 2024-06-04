@@ -41,7 +41,7 @@
                         <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock">
                         <hr/>
                         
-                        <div class="buttons" style="display:flex; justify-content: space-around">
+                        <div class="buttons" style="display:flex; justify-content: space-around;">
                             <a class="btn btn-primary" href="index.jsp" role="button" style="width: 100px; font-size: 20px">Voltar</a>
                             <input type="submit" href="index.jsp" class="btn btn-primary" name="session-login"style="width: 100px;  font-size: 20px"">
                         </div>
