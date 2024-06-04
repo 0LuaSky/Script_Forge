@@ -76,7 +76,7 @@ public class User {
     
     public static void updateUser(String login, String name, String role, String password) throws Exception{
         Connection con = AppListener.getConnection();
-        String sql = "UPDATE users SET name=?, role=?, password_hash=?";
+        String sql = "UPDATE users SET name=?, role=?, password_hash=?, login=?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, name);
         stmt.setString(2, role);
