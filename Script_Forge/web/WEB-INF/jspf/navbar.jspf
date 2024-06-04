@@ -83,7 +83,7 @@
                         <li class="nav-item">
                             <form class="d-flex">
                                 <div class="m-2">            
-                                    <%@include file="login-form.jspf" %>
+                                   <a class="nav-link" href="login.jsp">Login</a>
                                 </div>
                             </form>
                         </li>
