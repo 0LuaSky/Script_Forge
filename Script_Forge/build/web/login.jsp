@@ -13,7 +13,10 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/head-libs.jspf" %>
-        <%@include file="WEB-INF/jspf/body-libs.jspf" %>
+        <%@include file="WEB-INF/jspf/body-libs.jspf" %>    
+        <%@include file="WEB-INF/jspf/data.jspf" %>
+        
+        
         
         
         <nav class="navbar bg-body-tertiary fixed-top">
@@ -37,13 +40,12 @@
                         <label for="login" class="form-label" style="font-size: 20px">Insira o nome de usuario</label>
                         <input class="form-control" type="text" id="form-name" name="session-name">
                         
-                        <label for="password" class="form-label" style="font-size: 20px">Senha:</label>
-                        <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock">
                         <hr/>
                         
                         <div class="buttons" style="display:flex; justify-content: space-around;">
                             <a class="btn btn-primary" href="index.jsp" role="button" style="width: 100px; font-size: 20px">Voltar</a>
-                            <input type="submit" href="index.jsp" class="btn btn-primary" name="session-login"style="width: 100px;  font-size: 20px"">
+                                <input type="submit" class="btn btn-primary" name="session-login" style="width: 100px;  font-size: 20px" onClick="redirect()">
+
                         </div>
                     </div>
                 </form>
