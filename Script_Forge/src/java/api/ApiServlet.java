@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import model.User;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 @WebServlet(name = "ApiServlet", urlPatterns = {"/api/*"})
@@ -108,7 +109,31 @@ public class ApiServlet extends HttpServlet {
     }
 
     private void processUsers(JSONObject file, HttpServletRequest request, HttpServletResponse response) throws Exception{
-        
+        if(request.getSession().getAttribute("user")==null){
+            response.sendError(401, "Unauthorized: no session");
+        }else if(!((User)request.getSession().getAttribute("user")).getRole().equals("ADMIN")){
+            response.sendError(401, "Unauthorized: only admin can manage users");
+        }else if(request.getMethod().toLowerCase().equals("get")){
+            file.put("list", new JSONArray(User.getUsers()));
+        }else if(request.getMethod().toLowerCase().equals("post")){
+            JSONObject body = getJSONBody(request.getReader());
+            String login = body.getString("login");
+            String name = body.getString("name");
+            String role = body.getString("role");
+            String password = body.getString("password");
+            User.insertUser(login, name, role, password);
+        }else if(request.getMethod().toLowerCase().equals("put")){
+            JSONObject body = getJSONBody(request.getReader());
+            String login = body.getString("login");
+            String name = body.getString("name");
+            String role = body.getString("role");
+            String password = body.getString("password");
+            User.updateUser(login, name, role, password);
+        }else if(request.getMethod().toLowerCase().equals("delete")){
+            Long id = Long.parseLong(request.getParameter("id"));
+            User.deleteUser(id);
+        }else{
+            response.sendError(405, "Method not allowed");
+        }
     }
-
 }
