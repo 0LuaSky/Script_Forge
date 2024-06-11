@@ -5,7 +5,7 @@ const formMessage = document.querySelector("form");
 const model = "gpt-3.5-turbo-1106";
 
 const BASE_URL = "https://api.openai.com/v1/chat/completions";
-const API_KEY = "sk-proj-v0qpXZNzlzyUGMIxxsXjT3BlbkFJHPuAwmsAUZkkzGwldDTD";
+const API_KEY = "sD";
 
 const selectop01 = document.querySelector("#tag_01");
 const selectop02 = document.querySelector("#tag_02");
