@@ -487,7 +487,7 @@
             <section id="messages"></section>
             
         </main>
-        <script src="script.js"></script>
+        <script src="script-chat.jsp"></script>
         <script src="script0.js"></script>
     </body>
 </html>
