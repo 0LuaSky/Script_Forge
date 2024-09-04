@@ -487,6 +487,8 @@
             <section id="messages"></section>
             
         </main>
+        <%@include file="script-chat.jsp" %>
+        <%@include file="script-tags.jsp" %>
         <script src="script-chat.jsp"></script>
         <script src="script0.js"></script>
     </body>

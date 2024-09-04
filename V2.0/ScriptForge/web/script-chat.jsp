@@ -1,4 +1,5 @@
 <script>
+
     const sectionMessages = document.querySelector("#messages");
     const inputMessage = document.querySelector("#message");
     const buttonMessage = document.querySelector("#send-message");
@@ -207,4 +208,4 @@
       const loadingElement = sectionMessages.querySelector(".lds-ellipsis");
       if (loadingElement) loadingElement.remove();
     }
-<script/>
+</script>
