@@ -6,6 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../WEB-INF/logo.png" type="image/png">
         <title>Faça seu login</title>
         <?php
             require '../WEB-INF/libs/BodyLibs.php';
@@ -13,6 +14,7 @@
         ?> 
     </head>
     <body class="d-flex flex-column min-vh-100">
+        <?php require_once "../navbar/navbar_comps.php"; ?>
         <div style="margin-top: 100px; margin-left: 2%; margin-right: 2%;">
             <div class="card mb-3 w-75 mx-auto" style="max-width: ;">
                 <div class="row g-0 mx-1 my-4">
@@ -26,8 +28,7 @@
 
                     <div class="col-md-5 mx-auto">
                         <div class="card-body">
-                        <div class="card-header bg-transparent mb-5"><h2 class="card-title text-center mt-1">Faça seu login</h2></div>
-
+                            <div class="card-header bg-transparent mb-5"><h2 class="card-title text-center mt-1">Faça seu login</h2></div>
 
                             <form action="" method="POST">
                                 <div class="mb-4">
@@ -54,14 +55,10 @@
                             <a href="../user/cadastro.php" class="px-0 mb-3">
                                 <span class="ms-1 d-none d-sm-inline"><br>Cadastre-se aqui</span>
                             </a>   
-
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            
-            <?php require_once "../navbar/navbar_comps.php"; ?>
+            </div>           
         </div>    
     </body>
     <?php require "../navbar/footer.php"; ?>

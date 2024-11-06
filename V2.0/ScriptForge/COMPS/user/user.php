@@ -7,19 +7,21 @@
     //verifica se uma sessão esta ativa ou não
     $logged = isset($_SESSION['ativa']) ? TRUE : header("location: login.php");
     $admin = isset($_SESSION['adm']) ? TRUE : FALSE;
+    $get = isset( $_GET['id'])? TRUE : FALSE;
 
-    if(isset( $_GET['id'])) { 
+    if($get) { 
         $id = $_GET['id'];
-        $usuario = users_selectone($connect, "usuarios", $id);
-        if(isset($_POST['atualizar'])){
-            update($connect);
-        }
+        $usuario = comum_selectone($connect, "usuarios", $_GET['id']);
+        $email= $usuario['nm_email_usuario'];
+        $nome = $usuario['nm_usuario'];
+        $foto = $usuario['im_usuario'];
     }else{
         $id = $_SESSION['id'];
+        $usuario = comum_selectone($connect, "usuarios", $id);
+        $email= $usuario['nm_email_usuario'];
+        $nome = $usuario['nm_usuario'];
+        $foto = $usuario['im_usuario'];
     }
-
-    $usuario = users_selectone($connect, "usuarios", $id);
-    $foto = $usuario['im_usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,12 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            <link rel="icon" href="../WEB-INF/logo.png" type="image/png">
+            <?php if($get) { ?>
+                <title>vizualizando perfil</title>
+            <?php }else{ ?>
+                <title>Meu perfil</title>
+            <?php } ?>
             <?php
                 require '../WEB-INF/libs/BodyLibs.php';
                 require '../WEB-INF/libs/HeadLibs.php';
@@ -47,20 +54,37 @@
 
                     <div class="w-75 ">
 
-                        <div class="container text-left ">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h1>Meu perfil</h1>
-                                </div>
-                                <div class="col-sm-8">
-                                    <h6>
-                                        Configure o seu perfil da forma que preferir.
-                                        <br><br>
-                                        Lembre-se de não compartilhar seus dados pessoais com ninguem.
-                                    </h6>
+                        <?php if($get) { ?>
+                            <div class="container text-left ">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h1>Vizualizando o usuário</h1>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h6>
+                                            Lembre-se que aqui não é possivel aterar nenhuma informação de usuario enquanto vizualiza ele.
+                                            <br><br>
+                                            Não compartilhe nenhuma informação daqui.
+                                        </h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php }else{ ?>
+                            <div class="container text-left ">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h1>Meu perfil</h1>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h6>
+                                            Configure o seu perfil da forma que preferir.
+                                            <br><br>
+                                            Lembre-se de não compartilhar seus dados pessoais com ninguem.
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                         
                         <hr class="hr" />
                         <br>
@@ -68,7 +92,12 @@
                         <div class="w-75 text-center">
                             <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid rounded-circle mx-auto d-block" alt="image"  width="500" height="500">
                             <br>
-                            <h3><?php echo $usuario['nm_usuario']; ?> - <?php echo $usuario['nm_email_usuario'] ?> </h3>
+                            <h3>
+                                <?php if($get) { 
+                                    echo "ID: " . $id. " - ";
+                                }
+                                echo $nome . " - " . $email ?>
+                            </h3>
                             <br>
                             <hr class="hr" />
                         </div>
@@ -114,7 +143,7 @@
                                 <form class="row g-3" method="post">
                                     <div class="col-auto">
                                         <h6>Nome:</h6>
-                                        <input type="text" name="username" placeholder="<?php echo $usuario['nm_usuario']; ?>" class="form-control" required>
+                                        <input type="text" name="username" placeholder="<?php echo $nome; ?>" class="form-control" required>
                                     </div>
                                     <div class="col-auto ms-auto me-1">
                                         <br>
@@ -145,7 +174,7 @@
                                 <form class="row g-3" method="post">
                                     <div class="col-auto">
                                         <h6>e-mail:</h6>
-                                        <input value="" type="text" name="email" placeholder="<?php echo $usuario['nm_email_usuario']; ?>" class="form-control" required>
+                                        <input value="" type="text" name="email" placeholder="<?php echo $email; ?>" class="form-control" required>
                                     </div>
                                     <div class="col-auto ms-auto me-1">
                                         <br>
@@ -256,14 +285,14 @@
                                 </form>
                                 <?php
                                     if (isset($_POST['excluir'])) {
-                                        delete($connect);
+                                        users_delete($connect);
                                     }
                                 ?>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
-                <!-- divs que fecham a sidebar -->
+<!-- divs que fecham a sidebar -->
 </div>
 </div>
 </div>

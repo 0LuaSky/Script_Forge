@@ -2,6 +2,7 @@
     <html data-bs-theme="dark">
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link rel="icon" href="COMPS/WEB-INF/logo.png" type="image/png">
             <title>ScriptForge</title>
             <?php
                 require 'COMPS/WEB-INF/libs/BodyLibs.php';
@@ -30,7 +31,8 @@
                 <section id="messages"></section>  
             </main>
 
-            <script src="script_chat.php"></script>
-        </body>
+            <!--script src="script_chat.php"></script-->
+            <?php require "script_chat.php";?>
+            </body>
         <?php require "COMPS/navbar/footer.php";?>
     </html>

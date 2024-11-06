@@ -7,9 +7,9 @@
     if($logged){
         require_once "functions/comun_function.php";
 
-        $usuario = comum_selectone($connect, "usuarios", $_SESSION['id']);
-        $nome = $usuario['nm_usuario'];
-        $imagem = $usuario['im_usuario'];
+        $nav_usuario = comum_selectone($connect, "usuarios", $_SESSION['id']);
+        $nav_nome = $nav_usuario['nm_usuario'];
+        $nav_imagem = $nav_usuario['im_usuario'];
     }
 ?>
 <!DOCTYPE html>
@@ -54,10 +54,10 @@
                         <?php if($logged) { ?>
                             <div class="row">
                                 <div class="col-sm-auto">
-                                    <span class="ms-1 d-none d-sm-inline"><?php echo $nome; ?></span>
+                                    <span class="ms-1 d-none d-sm-inline"><?php echo $nav_nome; ?></span>
                                 </div>      
                                 <div class="col-sm-auto">
-                                    <img src="data:image/jpeg;base64,<?php echo $imagem ?>" class="shared-img" alt="image">
+                                    <img src="data:image/jpeg;base64,<?php echo $nav_imagem ?>" class="shared-img" alt="image">
                                 </div>
                             </div>
                         <?php } else { ?>
