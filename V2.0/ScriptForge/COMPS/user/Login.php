@@ -16,8 +16,8 @@
     <body class="d-flex flex-column min-vh-100">
         <?php require_once "../navbar/navbar_comps.php"; ?>
         <div style="margin-top: 100px; margin-left: 2%; margin-right: 2%;">
-            <div class="card mb-3 w-75 mx-auto bg-dark-subtle" style="max-width: ;">
-                <div class="row g-0 mx-1 my-4 ">
+            <div class="card mb-3 w-75 mx-auto" style="max-width: ;">
+                <div class="row g-0 mx-1 my-4">
                     <div class="col-md-5 m-auto">
                         <img src="../WEB-INF/Logo.png" class="img-fluid d-block " alt="ScriptForge"  width="500" height="500">
                     </div>
@@ -26,8 +26,8 @@
                         <div class="vr" style="height: 100%; width: 1px;"></div>
                     </div>
 
-                    <div class="col-md-5 mx-auto ">
-                        <div class="card-body ">
+                    <div class="col-md-5 mx-auto">
+                        <div class="card-body">
                             <div class="card-header bg-transparent mb-5"><h2 class="card-title text-center mt-1">Faça seu login</h2></div>
 
                             <form action="" method="POST">

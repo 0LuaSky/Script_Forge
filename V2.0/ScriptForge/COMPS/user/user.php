@@ -90,7 +90,7 @@
                         <br>
 
                         <div class="w-75 text-center">
-                            <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid rounded-circle mx-auto d-block" alt="image"  width="500" height="500" style="width:500px; height:500px">
+                            <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid rounded-circle mx-auto d-block" alt="image"  width="500" height="500">
                             <br>
                             <h3>
                                 <?php if($get) { 

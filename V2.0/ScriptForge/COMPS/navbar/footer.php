@@ -1,5 +1,6 @@
 
     <footer class="row bg-body-tertiary mt-auto mx-0">
+    <link rel="stylesheet" href="..\WEB-INF\libs\styles.css"> 
         <hr class="hr" />
         <div class="row col-sm-5 ms-1">
             <div class="col-sm-auto">

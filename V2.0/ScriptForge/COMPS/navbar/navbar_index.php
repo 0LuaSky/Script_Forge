@@ -13,37 +13,20 @@
     }
 ?>
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
         <head>
-            <style>
-                .shared-style {
-                    display: flex;
-                    align-items: center;
-                    color: inherit; /* Mantém a cor de texto original */
-                    font-size: 32px;
-                    text-decoration: none; /* Remove sublinhado do <a> */
-                    padding: 0;
-                    border: none; /* Remove borda de botões */
-                    background: none; /* Remove cor de fundo de botões */
-                }
-
-                .shared-img {
-                    width: 45px;
-                    height: 45px;
-                    border-radius: 50%; /* Certifica-se de que a imagem seja circular */
-                }
-            </style>
+            <link rel="stylesheet" href="COMPS\WEB-INF\libs\styles.css">
         </head>
-        <body>          
-            <nav class="navbar bg-body-tertiary fixed-top">
+        <body>
+            <nav class="navbar bg-body-tertiary fixed-top navbar-style">
                 <div class="container-fluid navbar-brand">
-                    <span style="font-size: 32px">
+                    <span>
                         <a class="nav-link" href="main.php">
                             <div class="row">
                                 <div class="col-sm-auto">
-                                    <img src="../WEB-INF/Logo.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logo.png';">
+                                    <img src="../WEB-INF/Logo.png" class="img-fluid d-block" alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logo blanca.png';">
                                 </div>
-                                <div class="col-sm-auto">
+                                <div class="col-sm-auto titulo-script-forge">
                                     Script Forge
                                 </div>
                             </div>
@@ -75,8 +58,6 @@
                             <br>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-            
-                        
                         <div class="offcanvas-body" style='font-size: 25px;'>
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <?php if($logged) { ?>
@@ -120,17 +101,10 @@
                                     </li>
                                 <?php }else{ ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.php">
-                                            <i class="bi bi-house me-2"></i> <!-- Adicione a classe 'me-2' para espaçamento à direita -->
-                                            <span >Pagina inicial</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">           
-                                        <a class="nav-link" href="COMPS/user/user.php">
-                                            <i class="bi bi-person me-2"></i>  <!-- Adicione a classe 'me-2' para espaçamento à direita -->
-                                            <span >Login</span>
-                                                    
-                                        </a>
+                                        <div class="m-2">            
+                                               <a class="nav-link" href="COMPS/user/login.php">Login</a>
+                                            </div>
+                                        </form>
                                     </li>
                                 <?php } ?>
                             </ul>
