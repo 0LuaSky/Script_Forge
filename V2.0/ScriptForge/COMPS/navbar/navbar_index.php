@@ -120,10 +120,17 @@
                                     </li>
                                 <?php }else{ ?>
                                     <li class="nav-item">
-                                        <div class="m-2">            
-                                               <a class="nav-link" href="COMPS/user/login.php">Login</a>
-                                            </div>
-                                        </form>
+                                        <a class="nav-link" href="index.php">
+                                            <i class="bi bi-house me-2"></i> <!-- Adicione a classe 'me-2' para espaçamento à direita -->
+                                            <span >Pagina inicial</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">           
+                                        <a class="nav-link" href="COMPS/user/user.php">
+                                            <i class="bi bi-person me-2"></i>  <!-- Adicione a classe 'me-2' para espaçamento à direita -->
+                                            <span >Login</span>
+                                                    
+                                        </a>
                                     </li>
                                 <?php } ?>
                             </ul>
