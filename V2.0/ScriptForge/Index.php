@@ -67,7 +67,7 @@
                     <div class="h-auto bg-body-tertiary mt-3 mb-5 rounded-5">
                         <div class="my-auto">
                             <div class="row mx-auto">
-                                <div class="col-sm-11 my-auto mx-auto">
+                                <div class="col-sm-11 my-auto mx-auto mt-5">
                                     <h2 class="mb-2 mt-4">
                                         Lembre-se de que tanto a inteligência artificial quanto este site são ferramentas, não soluções.
                                     </h2>
