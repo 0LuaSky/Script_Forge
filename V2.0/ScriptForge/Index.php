@@ -8,6 +8,8 @@
                 require 'COMPS/WEB-INF/libs/BodyLibs.php';
                 require 'COMPS/WEB-INF/libs/HeadLibs.php';
             ?> 
+            <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
+            <link rel="stylesheet" href="COMPS\WEB-INF\styles.css"> 
         </head>
         <body class="d-flex flex-column min-vh-100">
             <?php require "COMPS/navbar/navbar_index.php"; ?>
@@ -50,7 +52,7 @@
                                     <br>
                                     <h3 class="mb-2">
                                         Script forge é a ferramenta que, com o auxílio da Open AI, te ajuda a criar um roteiro para o seu jogo, através do uso da inteligência
-                                        artificial conhecida como Chat-GPT. Crie roteiros, salve histórias e deixe a sua imaginação brilhar.
+                                        artificial conhecida como chat-GPT. Crie roteiros, salve histórias e deixe a sua imaginação brilhar.
                                     </h3>
                                 </div>
                                 
@@ -79,7 +81,7 @@
                                     <hr class="hr w-75 mx-auto" />
                                     
                                     <h3 class="mb-5 mt-5 text-center">
-                                        Veja aqui alguns artigos úteis sobre a utilização de IA no mercado de trabalho atual.
+                                        Veja aqui alguns artigos úteis sobre a utilização de ia no mercado de trabalho atual.
                                     </h3>
 
                                     <br>

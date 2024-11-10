@@ -27,7 +27,6 @@
                 require '../WEB-INF/libs/HeadLibs.php';
             ?> 
             <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
-            <link rel="stylesheet" href="COMPS\WEB-INF\styles.css"> 
         </head>
         <body class="d-flex flex-column min-vh-100">
             <div style="margin-top: 100px; margin-left: 2%; margin-right: 2%;">

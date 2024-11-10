@@ -13,7 +13,6 @@
             require '../WEB-INF/libs/HeadLibs.php';
         ?> 
         <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
-        <link rel="stylesheet" href="COMPS\WEB-INF\styles.css"> 
     </head>
     <body class="d-flex flex-column min-vh-100">
         <?php require_once "../navbar/navbar_comps.php"; ?>

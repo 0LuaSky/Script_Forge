@@ -7,33 +7,42 @@
             <?php
                 require 'COMPS/WEB-INF/libs/BodyLibs.php';
                 require 'COMPS/WEB-INF/libs/HeadLibs.php';
-            ?>
+            ?>  
+            <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
+            <link rel="stylesheet" href="COMPS\WEB-INF\styles.css">   
         </head>
         <body class="d-flex flex-column min-vh-100">
-            <?php require "COMPS/navbar/navbar_index.php";?>
-
-            <main style="margin-top: 100px; margin-left: 2%; margin-right: 2%; background-image: https://images2.alphacoders.com/130/1307306.png;">
-                <div class="container-xxl mt-5 rounded-3 bg-black p-2 text-dark bg-opacity-25 text-white">
-                    <form style="margin-right: 0%;">
-                        <p><br>Escolha uma categoria para seu jogo, para podermos criar o roteiro perfeito para você.</p>
-                        <?php
-                            require 'COMPS/tags/tags.php'
-                        ?>
-                        <div style="margin-right: 0%; " class="col-auto">
-                            <label for="message" class="form-label">Escreva um enredo para um jogo de vídeo-game baseado em...</label>
-                            <textarea class="form-control" name="message" id="message" class="form-control" placeholder="Escreva aqui." style="height:100px;"></textarea>
-                            <br>
-                            <button type="button" id="send-message" class="btn btn-primary mb-3" disabled style="margin-left:36%; width: 300px;">
+            <?php require "COMPS/navbar/navbar_index.php"; ?>
+                     
+            <div style="margin-top: 100px; margin-left: 2%; margin-right: 2%; margin-bottom: 100px">
+                <form class="mx-auto" style="">
+                    <p>Escolha uma categoria para seu jogo, para podermos criar o roteiro perfeito para você.</p>
+                    <?php
+                        require 'COMPS/tags/tags.php'
+                    ?>
+                    <div class="col-auto">
+                        <label for="message" class="form-label">Escreva um enredo para um jogo de vídeo-game baseado em...</label>
+                        <textarea class="form-control" name="message" id="message" class="form-control" placeholder="escreva aqui." style="height:100px;"></textarea>
+                        <br>
+                        <div class="mx-auto">
+                            <button type="button" id="send-message" class="btn btn-primary mb-3" disabled style="margin-left:40%; width: 300px;">
                                 <i class="bi bi-sourceforge"></i>
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+                
                 <section id="messages"></section>
-            </main>
 
-            <!--script src="script_chat.php"></script-->
-            <?php require "script_chat.php";?>
-            </body>
+                <?php
+                    if(isset($_POST['salvar'])){
+                        
+                        history_insert($connect);
+                    }
+                ?>
+            </div>
+
+            <script src="script_chat.js"></script>
+        </body>
         <?php require "COMPS/navbar/footer.php";?>
     </html>

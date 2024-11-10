@@ -31,7 +31,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="../WEB-INF/logo.png" type="image/png">
             <?php if($get) { ?>
-                <title>Vizualizando perfil</title>
+                <title>vizualizando perfil</title>
             <?php }else{ ?>
                 <title>Meu perfil</title>
             <?php } ?>
@@ -39,6 +39,7 @@
                 require '../WEB-INF/libs/BodyLibs.php';
                 require '../WEB-INF/libs/HeadLibs.php';
             ?> 
+            <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
         </head>
         
         <body class="d-flex flex-column min-vh-100">
@@ -64,7 +65,11 @@
                                         <h6>
                                             Lembre-se que aqui não é possivel aterar nenhuma informação de usuario enquanto vizualiza ele.
                                             <br><br>
-                                            Não compartilhe nenhuma informação daqui.
+                                            <a href="historico.php?fakeid=<?php echo $id ?>" class="align-middle px-0 mb-3" > 
+                                                <span class="ms-1 d-none d-sm-inline">
+                                                    Veja o historico de <?php echo $nome; ?>
+                                                </span>
+                                            </a>
                                         </h6>
                                     </div>
                                 </div>
@@ -79,7 +84,7 @@
                                         <h6>
                                             Configure o seu perfil da forma que preferir.
                                             <br><br>
-                                            Lembre-se de não compartilhar seus dados pessoais com ninguém.
+                                            Lembre-se de não compartilhar seus dados pessoais com ninguem.
                                         </h6>
                                     </div>
                                 </div>
@@ -90,7 +95,7 @@
                         <br>
 
                         <div class="w-75 text-center">
-                            <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid rounded-circle mx-auto d-block" alt="image"  width="500" height="500" style="width:300px; height:300px">
+                            <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid rounded-circle mx-auto d-block" alt="image"  width="500" height="500" style="width:500px; height:500px">
                             <br>
                             <h3>
                                 <?php if($get) { 
@@ -128,7 +133,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary mb-3 ms-auto" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarfoto">Salvar mudanças</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarfoto">salvar mudanças</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +164,7 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary mb-3 ms-auto" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarnome">Salvar mudanças</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarnome">salvar mudanças</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -173,7 +178,7 @@
                                 
                                 <form class="row g-3" method="post">
                                     <div class="col-auto">
-                                        <h6>E-mail:</h6>
+                                        <h6>e-mail:</h6>
                                         <input value="" type="text" name="email" placeholder="<?php echo $email; ?>" class="form-control" required>
                                     </div>
                                     <div class="col-auto ms-auto me-1">
@@ -190,7 +195,7 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary mb-3 ms-auto" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizaremail">Salvar mudanças</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizaremail">salvar mudanças</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -204,7 +209,7 @@
                                 
                                 <form class="row g-3" method="post">
                                     <div class="col-auto">
-                                        <h6>Senha:</h6>
+                                        <h6>senha:</h6>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <input type="password" name="senha1" placeholder="Senha" class="form-control" required>
@@ -231,7 +236,7 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary mb-3 ms-auto" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarsenha">Salvar mudanças</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 me-auto" name="atualizarsenha">salvar mudanças</button>
                                                 </div>
                                             </div>
                                         </div>

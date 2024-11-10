@@ -14,8 +14,8 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-0 pt-0 text-white min-vh-10">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item mt-2 fs-3">
-                        <a href="../../main.php" class="nav-link px-0 align-middle mb-3" style="color: white">
-                            <i class="fs-4 bi bi-house" style="color: white"></i>
+                        <a href="../../main.php" class="nav-link px-0 align-middle mb-3">
+                            <i class="fs-4 bi bi-house"></i>
                             <span class="ms-1 d-none d-sm-inline">Voltar</span>
                         </a>
                         <hr class="hr" style="width:200px; "/>
@@ -23,8 +23,8 @@
 
                     <li class="nav-item mt-2 fs-3">
                         <a href="../user/user.php" class="nav-link align-middle px-0 mb-3" >
-                            <i class="fs-4 bi bi-person" style="color: white"></i> 
-                            <span class="ms-1 d-none d-sm-inline" style="color: white">
+                            <i class="fs-4 bi bi-person"></i> 
+                            <span class="ms-1 d-none d-sm-inline">
                                 <?php if($logged) {
                                     echo $_SESSION['nome'];
                                 } ?>
@@ -36,9 +36,9 @@
                   
 
                     <li class="nav-item mt-2 fs-3">
-                        <a href="#" class="nav-link px-0 align-middle mb-3">
-                            <i class="fs-4 bi bi-clock-history" style="color: white"></i>
-                            <span class="ms-1 d-none d-sm-inline" style="color: white">Histórico</span>
+                        <a href="historico.php" class="nav-link px-0 align-middle mb-3">
+                            <i class="fs-4 bi bi-clock-history"></i>
+                            <span class="ms-1 d-none d-sm-inline">Histórico</span>
                         </a>
                         <hr class="hr" style="width:200px; "/>
                     </li>
@@ -46,8 +46,8 @@
                     <?php if($admin) { ?>
                         <li class="nav-item mt-2 fs-3">
                             <a href="../user/admin.php"  class="nav-link px-0 align-middle mb-3">
-                                <i class="fs-4 bi bi-people" style="color: white"></i>
-                                <span class="ms-1 d-none d-sm-inline" style="color: white">Tabela de Usuários</span>
+                                <i class="fs-4 bi bi-people"></i>
+                                <span class="ms-1 d-none d-sm-inline">Tabela de Usuários</span>
                             </a>
                             <hr class="hr" style="width:200px; "/>
 
@@ -55,8 +55,8 @@
                     <?php } ?> 
                     <li class="nav-item mt-2 fs-3">
                         <a href="../user/logout.php" class="nav-link px-0 mb-3">
-                            <i class="fs-4 bi bi-box-arrow-left" style="color: white"></i>
-                            <span class="ms-1 d-none d-sm-inline" style="color: white">Desconectar</span>
+                            <i class="fs-4 bi bi-box-arrow-left"></i>
+                            <span class="ms-1 d-none d-sm-inline">Desconectar</span>
                         </a>   
                     </li>
                 </ul>

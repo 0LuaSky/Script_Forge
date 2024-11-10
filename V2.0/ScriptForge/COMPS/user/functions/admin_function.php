@@ -10,17 +10,6 @@
     //usado em qualqer função que interage com o banco de dados
     $connect = mysqli_connect($host, $db_user, $db_pass, $db_name);
 
-    //função que busca apenas um resultado na tabela, util para encontrar um especifico dentro de uma lista  
-    //$tabela representa a table que sera selecionada, pode ser util caso em algum momento precise mostrar outras tabelas, como o historico e etc.
-    function selectone($connect, $tabela, $id){
-        //(int) força a se tornar um valor interio
-        //talvez seja possivel adicionar OR no banco para buscar parecidos com tal nome ou com tal email
-        $querry = "SELECT * FROM $tabela WHERE cd_usuario =".(int)$id; 
-        $executar = mysqli_query($connect, $querry);
-        $return = mysqli_fetch_assoc($executar);
-        return $return;
-    }
-
     //funçao que busca varios/todos os ususuarios no tabela
     function admin_selectall($connect, $tabela, $where = 1, $order = ""){
         if(!empty($order)){

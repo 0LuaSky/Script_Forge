@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="..\WEB-INF\styles.css"> 
-<link rel="stylesheet" href="COMPS\WEB-INF\styles.css">  
+<script src="script_tags.js"></script>
 <div class="Taggs">
     <div class="taggers01" style="display:flex">
         <div id="tag_01_container" style="display:block; margin-left:0%;">
             <select id="tag_01" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -49,7 +48,7 @@
         </div>
         <div id="tag_02_container" style="display:none;  margin-left:3%;">
             <select id="tag_02" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -94,7 +93,7 @@
         </div>
         <div id="tag_03_container" style="display:none;  margin-left:3%;">
             <select id="tag_03" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -139,7 +138,7 @@
         </div>
         <div id="tag_04_container" style="display:none;  margin-left:3%;">
             <select id="tag_04" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -184,7 +183,7 @@
         </div>
         <div id="tag_05_container" style="display:none;  margin-left:3%;">
             <select id="tag_05" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -229,7 +228,7 @@
         </div>
         <div id="tag_06_container" style="display:none;  margin-left:3%;">
             <select id="tag_06" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -277,7 +276,7 @@
     <div class="taggers02" style="display:flex">
         <div id="tag_07_container" style="display:none;  margin-left:0%;">
             <select id="tag_07" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -322,7 +321,7 @@
         </div>
         <div id="tag_08_container" style="display:none;  margin-left:3%;">
             <select id="tag_08" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -367,7 +366,7 @@
         </div>  
         <div id="tag_09_container" style="display:none;  margin-left:3%;">
             <select id="tag_09" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -412,7 +411,7 @@
         </div>
         <div id="tag_10_container" style="display:none;  margin-left:3%;">
             <select id="tag_10" class="form-select" aria-label="Default select example" style="width:200px;">
-                <option selected> - - - </option>
+                <option value="" selected> - - - </option>
                 <option value="Ação">Ação</option>
                 <option value="Apocalíptico">Apocalíptico</option>
                 <option value="Aventura">Aventura</option>
@@ -457,3 +456,126 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_01");
+        const secondSelectContainer = document.getElementById("tag_02_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_02");
+        const secondSelectContainer = document.getElementById("tag_03_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_03");
+        const secondSelectContainer = document.getElementById("tag_04_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_04");
+        const secondSelectContainer = document.getElementById("tag_05_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_05");
+        const secondSelectContainer = document.getElementById("tag_06_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_06");
+        const secondSelectContainer = document.getElementById("tag_07_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_07");
+        const secondSelectContainer = document.getElementById("tag_08_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_08");
+        const secondSelectContainer = document.getElementById("tag_09_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_09");
+        const secondSelectContainer = document.getElementById("tag_10_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstSelect = document.getElementById("tag_10");
+        const secondSelectContainer = document.getElementById("tag_11_container");
+
+        firstSelect.addEventListener("change", function() {
+            if (firstSelect.value) {
+                secondSelectContainer.style.display = "block";
+            } else {
+                secondSelectContainer.style.display = "none";
+            }
+        });
+    });
+</script>
