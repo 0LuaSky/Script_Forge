@@ -1,9 +1,9 @@
 
 /*--- Navbar ---*/
-/*    .navbar-style{
-/*        background-image: url('https://images.unsplash.com/photo-1617957772002-57adde1156fa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D'); /*Créditos: do Google*/
-/*        color: #fff;
-/*    }       
+/*.bg{
+    background-image: url('https://images.unsplash.com/photo-1617957772002-57adde1156fa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D') !important; /*Créditos: do Google*/
+/*    color: #fff;
+}       
 /*    .shared-style {
 /*        display: flex;
 /*        align-items: center;
@@ -25,10 +25,10 @@
 /*
 /*   /*--- Sidebar ---*/
 /*
-/*    /*--- Footer ---*/
-/*    .footer-style{
-/*        background-image: url('https://images.unsplash.com/photo-1617957772002-57adde1156fa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D'); /*Créditos: Nyckolas Vives*/
-/*        color: #fff;
-/*   }
+    /*--- Footer ---*/
+/*.footer-style{
+    background-image: url('https://images.unsplash.com/photo-1617957772002-57adde1156fa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D') !important; /*Créditos: Nyckolas Vives*/
+/*    color: #fff;
+}
 /*--- Index ---*/
 /*--- Others ---*/

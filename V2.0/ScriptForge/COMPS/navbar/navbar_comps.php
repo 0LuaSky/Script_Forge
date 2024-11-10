@@ -19,13 +19,13 @@
             <link rel="stylesheet" href="COMPS\WEB-INF\styles.css">  
         </head>
         <body>          
-            <nav class="navbar bg-body-tertiary fixed-top navbar-style">
+            <nav class="navbar bg-body-tertiary fixed-top" style="background-image: url('https://images3.alphacoders.com/135/1352316.jpeg')">
                 <div class="container-fluid navbar-brand">
-                    <span style="font-size: 32px">
+                    <span style="font-size: 25px">
                         <a class="nav-link" href="../../main.php">
                             <div class="row">
                                 <div class="col-sm-auto">
-                                    <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
+                                    <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="40" height="40" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
                                 </div>
                                 <div class="col-sm-auto">
                                     Script Forge
@@ -41,7 +41,7 @@
                                     <span class="ms-1 d-none d-sm-inline"><?php echo $nav_nome; ?></span>
                                 </div>      
                                 <div class="col-sm-auto">
-                                    <img src="data:image/jpeg;base64,<?php echo $nav_imagem ?>" class="shared-img" alt="image">
+                                    <img src="data:image/jpeg;base64 ,<?php echo $nav_imagem ?>" class="shared-img rounded-circle" alt="image" width="40" height="40">
                                 </div>
                             </div>
                         <?php } else { ?>

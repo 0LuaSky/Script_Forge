@@ -14,18 +14,14 @@
 ?>
 <!DOCTYPE html>
     <html lang="en">
-        <head>
-            <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
-            <link rel="stylesheet" href="COMPS\WEB-INF\styles.css">  
-        </head>
-        <body>          
-            <nav class="navbar bg-body-tertiary fixed-top navbar-style">
-                <div class="container-fluid navbar-brand">
-                    <span style="font-size: 32px">
+        <body>
+            <nav class="navbar bg-body-tertiary fixed-top" style="background-image: url('https://images3.alphacoders.com/135/1352316.jpeg')">
+                <div class="container-fluid ">
+                    <span style="font-size: 25px">
                         <a class="nav-link" href="main.php">
                             <div class="row">
                                 <div class="col-sm-auto">
-                                    <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
+                                    <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="40" height="40" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
                                 </div>
                                 <div class="col-sm-auto">
                                     Script Forge
@@ -41,7 +37,7 @@
                                     <span class="ms-1 d-none d-sm-inline"><?php echo $_SESSION['nome']; ?></span>
                                 </div>      
                                 <div class="col-sm-auto">
-                                    <img src="data:image/jpeg;base64,<?php echo $_SESSION['foto'] ?>" class="shared-img" alt="image">
+                                    <img src="data:image/jpeg;base64,<?php echo $_SESSION['foto'] ?>" class="shared-img rounded-circle" alt="image" width="40" height="40">
                                 </div>
                             </div>
                         <?php } else { ?>
@@ -50,10 +46,10 @@
                     </button>
                     
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                        <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
+                        <div class="offcanvas-header" style="background-image: url('https://images3.alphacoders.com/135/1352316.jpeg'">
+                        <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="35" height="35" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
 
-                            <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            <h3 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-size: 24px">
                                 Script Forge
                             </h3>
                             <br>
@@ -61,7 +57,7 @@
                         </div>
             
                         
-                        <div class="offcanvas-body" style='font-size: 25px;'>
+                        <div class="offcanvas-body bg-black p-2 text-dark bg-opacity-25" style='font-size: 25px;'>
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <?php if($logged) { ?>
                                     <li class="nav-item">
