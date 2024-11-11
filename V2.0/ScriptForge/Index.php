@@ -61,7 +61,7 @@
                                 </div>
                                 
                                 <div class="col-sm-5 my-5 mx-5">
-                                    <img src="COMPS/WEB-INF/imagem.png" class="img-fluid d-block " alt="imagem a ser colocada"  width="750" height="750">
+                                    <img src="COMPS/WEB-INF/exemplo.png" class="img-fluid d-block " alt="imagem a ser colocada"  width="1200" height="750">
                                 </div>
                             </div>
                         </div>

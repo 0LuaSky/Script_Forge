@@ -44,10 +44,10 @@
                         <?php if($logged) { ?>
                             <div class="row">
                                 <div class="col-sm-auto">
-                                    <span class="ms-1 d-none d-sm-inline"><?php echo $_SESSION['nome']; ?></span>
+                                    <span class="ms-1 d-none d-sm-inline"><?php echo $nav_nome; ?></span>
                                 </div>      
                                 <div class="col-sm-auto">
-                                    <img src="data:image/jpeg;base64,<?php echo $_SESSION['foto'] ?>" class="shared-img" alt="image">
+                                    <img src="data:image/jpeg;base64,<?php echo $nav_imagem ?>" class="shared-img" alt="image">
                                 </div>
                             </div>
                         <?php } else { ?>
