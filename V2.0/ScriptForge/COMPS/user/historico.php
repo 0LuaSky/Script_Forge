@@ -130,7 +130,7 @@
                                             <br>    
                                         </div>
                                         <div class="modal-body">
-                                            <img src="data:image/jpeg;base64,<?php echo $roteiros['im_resposta'] ?>" class="img-fluid rounded mx-auto d-block" alt="image" >
+                                            <img src="data:image/jpeg;base64,<?php echo $roteiro['im_resposta'] ?>" class="img-fluid rounded mx-auto d-block" alt="image" >
                                         </div>
                                         <div class="modal-body">
                                             <div class="text-center mb-5">
