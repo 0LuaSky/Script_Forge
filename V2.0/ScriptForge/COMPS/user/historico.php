@@ -171,11 +171,11 @@
                                             </div>
 
                                             <div class="text-start w-75 mt-2 mb-5">
-                                                <span class="form-control">Um roteiro para um jogo de videogame baseado em:<br><?php echo $roteiros['ds_prompt'] ?></span>
+                                                <span class="form-control">Um roteiro para um jogo de videogame baseado em:<br><?php echo $roteiro['ds_prompt'] ?></span>
                                             </div>
 
                                             <div class="w-75 ms-auto mb-5">
-                                                <span class="form-control"><?php echo $roteiros['ds_resposta'] ?></span>
+                                                <span class="form-control"><?php echo $roteiro['ds_resposta'] ?></span>
                                             </div>
                                         
                                             </div>
