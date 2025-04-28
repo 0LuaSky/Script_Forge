@@ -1,0 +1,19 @@
+
+    .shared-style {
+        display: flex;
+        align-items: center;
+        color: inherit; /* Mantém a cor de texto original */
+        font-size: 32px;
+        text-decoration: none; /* Remove sublinhado do <a> */
+        padding: 0;
+        border: none; /* Remove borda de botões */
+        background: none; /* Remove cor de fundo de botões */
+    }
+    .shared-img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+    .titulo{
+        font-size: 32px;
+    }
