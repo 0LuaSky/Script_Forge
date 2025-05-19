@@ -56,37 +56,29 @@
             containers.push(document.getElementById(`tag_${num}_container`));
         }
 
-        function reorganizarTags() {
-            // Captura todos os valores preenchidos
-            const valores = selects.map(select => select.value).filter(valor => valor !== "");
-
-            // Limpa tudo
-            selects.forEach(select => select.value = "");
-
-            // Repreenche de cima para baixo
-            valores.forEach((valor, index) => {
-                selects[index].value = valor;
-            });
-
-            // Atualiza exibição dos containers
-            selects.forEach((select, index) => {
-                if (index === 0 || selects[index-1].value !== "") {
-                    containers[index].style.display = "block";
+        function atualizarExibicaoTags() {
+            for (let i = 0; i < selects.length; i++) {
+                if (i === 0) {
+                    // Sempre mostra a primeira
+                    containers[i].style.display = "block";
                 } else {
-                    containers[index].style.display = "none";
+                    // Mostra a atual se a anterior estiver preenchida
+                    if (selects[i - 1].value !== "") {
+                        containers[i].style.display = "block";
+                    } else {
+                        containers[i].style.display = "none";
+                        selects[i].value = ""; // Limpa o select escondido
+                    }
                 }
-            });
-
-            // Mostrar o próximo container vazio se ainda tiver espaço
-            const primeiroVazio = selects.findIndex(select => select.value === "");
-            if (primeiroVazio !== -1 && primeiroVazio < selects.length) {
-                containers[primeiroVazio].style.display = "block";
             }
         }
 
         // Adiciona evento de mudança em todos os selects
         selects.forEach(select => {
-            select.addEventListener("change", reorganizarTags);
+            select.addEventListener("change", atualizarExibicaoTags);
         });
+
+        // Roda uma vez na carga da página
+        atualizarExibicaoTags();
     });
 </script>

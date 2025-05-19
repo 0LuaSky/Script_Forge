@@ -12,7 +12,7 @@
         $nav_nome = $nav_usuario['nm_usuario'];
         $nav_imagem = $nav_usuario['im_usuario'];
 
-        $roteiros = history_selectlast($connect, "historico");
+        $roteiros = history_selectlast($connect, "historico", $_SESSION['id']);
     }
 
 
@@ -25,7 +25,7 @@
 
         </head>
         <body>          
-            <nav class="navbar bg-body-tertiary fixed-top navbar-style">
+            <nav class="navbar bg-body-tertiary fixed-top navbar-style border-bottom">
                 <div class="container-fluid navbar-brand">
                     <span style="font-size: 32px">
                         <a class="nav-link" href="main.php">
@@ -57,7 +57,7 @@
                     
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header">
-                        <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
+                            <img src="../WEB-INF/Logobranca.png" class="img-fluid d-block " alt="ScriptForge"  width="50" height="50" onerror="this.onerror=null; this.src='COMPS/WEB-INF/Logobranca.png';">
 
                             <h3 class="offcanvas-title" id="offcanvasNavbarLabel">
                                 Script Forge
@@ -135,6 +135,7 @@
                     </div>
                 </div>
             </nav>
+
         </body>
     </html>
 

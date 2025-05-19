@@ -18,7 +18,13 @@
     }
 
     $roteiros = history_selectlast($connect, "historico", $id);
-    $roteiro = history_selectone($connect, "historico", $id);
+    
+    if (isset($_GET['id'])) {
+        $cd_historico = $_GET['id'];
+        $roteiro = history_selectone($connect, "historico", $id, $cd_historico);
+    } else {
+        $roteiro = null; // evita erro caso $_GET['id'] não exista
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +33,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="../WEB-INF/logo.png" type="image/png">
-            <title>historico</title>
+            <title>Historico</title>
 
             <link rel="stylesheet" href="..\WEB-INF\styles.css"> 
 
@@ -51,7 +57,7 @@
                             <?php if($get) { ?>
                                 <div class="col-sm-8">
                                     <h4>
-                                        Vizualize todos os roteiros salvos de <?php echo $nome ?> aqui.
+                                        Vizualize todos os roteiros salvos de <?php echo $nome?> aqui.
                                     </h4>
                                 </div>
                             <?php } else { ?>
@@ -98,10 +104,10 @@
                                         <div class="text-end">
                                             <small class="text-body-secondary text-end">Alterado pela ultima vez em <?php echo $roteiros['dt_alterado'] ?></small>
                                         </div>
-                                        <img src="data:image/jpeg;base64,<?php echo $roteiros['im_resposta'] ?>" class="img-fluid rounded mx-auto d-block" alt="image" >
+                                        <img src="data:image/jpeg;base64,<?php echo $roteiros['im_resposta'] ?>" class="img-fluid rounded mx-auto d-block my-2" alt="image" >
                                         <h3 class="card-title"><?php echo $roteiros['nm_titulo'] ?></h3>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body ">
                                         <p class="card-text"><?php echo $textoCurto. "..." ?></p>
                                     </div>
                                     <div class="card-footer text-center">
@@ -175,14 +181,15 @@
                                             </div>
 
                                             <div class="w-75 ms-auto mb-5">
-                                                <span class="form-control"><?php echo $roteiro['ds_resposta'] ?></span>
+                                                <span class="form-control"><?php echo nl2br(htmlspecialchars($roteiro['ds_resposta'])); ?></span>
                                             </div>
                                         
                                             </div>
                                         
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">fechar</button>
+                                            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">fechar</button>
                                             <?php if(!$get){ ?>
+                                                <a href="../../elaborate.php?id=<?php echo $_GET['id']?>" class="btn btn-primary mx-3">Alterar</a> 
                                                 <form action="" method="post">
                                                     <button type="submit" class="btn btn-danger" name="delete">Excluir</button>
                                                 </form>

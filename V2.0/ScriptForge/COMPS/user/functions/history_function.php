@@ -19,8 +19,8 @@
         return $return;
     }
 
-    function history_selectlast($connect, $tabela,){
-        $id = $_SESSION['id'];
+    function history_selectlast($connect, $tabela, $id){
+
     
         // Corrigindo a consulta SQL e melhorando a sintaxe
         $query = "SELECT * FROM historico WHERE cd_usuario = $id ORDER BY dt_alterado DESC, cd_historico DESC"; 
@@ -29,18 +29,13 @@
         return $return;
     }
 
-    function history_selectone($connect, $tabela, $id){
-        $userid = $id;
-        if(isset($_GET['id'])){
-            $id = $_GET['id'];
-        }else{
-            $id = 0;
-        }
-        
-        $querry = "SELECT * FROM historico WHERE cd_usuario = " . $userid . " AND cd_historico = " . $id; 
-        $executar = mysqli_query($connect, $querry);
-        $return = mysqli_fetch_assoc($executar);
-        return $return;
+    function history_selectone($connect, $tabela, $cd_usuario, $cd_historico) {
+        $cd_usuario = (int)$cd_usuario;
+        $cd_historico = (int)$cd_historico;
+
+        $query = "SELECT * FROM $tabela WHERE cd_usuario = $cd_usuario AND cd_historico = $cd_historico";
+        $executar = mysqli_query($connect, $query);
+        return mysqli_fetch_assoc($executar);
     }
 
     function history_insert($connect){
@@ -48,7 +43,7 @@
             $erros = array();
             //verifica se é uma string valida
             $prompt = mysqli_real_escape_string($connect, $_POST['prompt']);
-            $titulo =  $_POST['titulo'];
+            $titulo = mysqli_real_escape_string($connect, $_POST['titulo']);
             $resposta = $_POST['resposta'];
             $id = $_SESSION['id'];
 
@@ -94,6 +89,63 @@
             }
         }
     }
+
+    function history_update($connect){
+    if (isset($_POST['salvar'])) {
+        $erros = array();
+
+        $prompt = mysqli_real_escape_string($connect, $_POST['prompt']);
+        $titulo = mysqli_real_escape_string($connect, $_POST['titulo']);
+        $resposta = mysqli_real_escape_string($connect, $_POST['resposta']);
+
+        $id_usuario = $_SESSION['id'];
+        $id_historico = $_GET['id'];
+
+        // Tags (de op01 a op10)
+        $tags = [];
+        for ($i = 1; $i <= 10; $i++) {
+            $tagName = sprintf('op%02d', $i);
+            $tags[] = isset($_POST[$tagName]) ? mysqli_real_escape_string($connect, $_POST[$tagName]) : "";
+        }
+
+        list($op01, $op02, $op03, $op04, $op05, $op06, $op07, $op08, $op09, $op10) = $tags;
+
+        // Verifica se há erros
+        if (empty($erros)) {
+            $query = "
+                UPDATE historico
+                SET 
+                    ds_prompt = '$prompt',
+                    nm_titulo = '$titulo',
+                    ds_resposta = '$resposta',
+                    nm_tag01 = '$op01',
+                    nm_tag02 = '$op02',
+                    nm_tag03 = '$op03',
+                    nm_tag04 = '$op04',
+                    nm_tag05 = '$op05',
+                    nm_tag06 = '$op06',
+                    nm_tag07 = '$op07',
+                    nm_tag08 = '$op08',
+                    nm_tag09 = '$op09',
+                    nm_tag10 = '$op10',
+                    dt_alterado = NOW()
+                WHERE 
+                    cd_usuario = $id_usuario AND 
+                    cd_historico = $id_historico
+            ";
+
+            $executar = mysqli_query($connect, $query);
+
+            if ($executar) {
+                history_aviso("Roteiro atualizado com sucesso.", "", "main.php");
+            } else {
+                history_aviso("Erro! Não foi possível atualizar o roteiro.", "Falha ao conectar com o banco de dados, tente novamente mais tarde.", "");
+            }
+        } else {
+            history_aviso("Erro! Não foi possível salvar o roteiro.", $erros, "");
+        }
+    }
+}
 
     function history_delete($connect){        
         if(!isset( $_GET['fakeid'])){

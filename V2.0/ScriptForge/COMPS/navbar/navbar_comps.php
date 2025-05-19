@@ -20,7 +20,7 @@
            
         </head>
         <body>          
-            <nav class="navbar bg-body-tertiary fixed-top navbar-style">
+            <nav class="navbar bg-body-tertiary fixed-top navbar-style border-bottom">
                 <div class="container-fluid navbar-brand">
                     <span style="font-size: 32px">
                         <a class="nav-link" href="../../main.php">
