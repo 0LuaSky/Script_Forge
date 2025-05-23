@@ -32,7 +32,12 @@ async function character(){
     const originaltext = OriginalResponseGPT;
     const options = op00;
     const prompt = Originalprompt;
-    const userInputMessage = "Elabore mais os personagens";
+    let userInputMessage = document.getElementById("message").value;
+    if(userInputMessage !== ""){
+        userInputMessage = "Elabore mais os personagens com base nesso na seguinte ideia: "  + userInputMessage;
+    }  else{
+        userInputMessage = "Elabore mais os personagens" 
+    }
 
     const characterButton = document.getElementById("character-buttom");
     characterButton.disabled = true;
@@ -59,6 +64,7 @@ async function character(){
             </div>
         </div>`;
 
+        document.getElementById("message").value = "";
         save(count, responseGPT)
     } catch (error) {
         sectionMessages.innerHTML = "Erro ao gerar o script.";
@@ -71,7 +77,12 @@ async function scenary(){
     const originaltext = OriginalResponseGPT;
     const options = op00;
     const prompt = Originalprompt;
-    const userInputMessage = "Elabore mais o cenario em que se passa o jogo";
+    let userInputMessage = document.getElementById("message").value;
+    if(userInputMessage !== ""){
+        userInputMessage = "Elabore mais o cenario em que se passa o jogo com base nesso na seguinte ideia: "  + userInputMessage;
+    }  else{
+        userInputMessage = "Elabore mais o cenario em que se passa o jogo";
+    }
 
     const characterButton = document.getElementById("cenary-buttom");
     characterButton.disabled = true;
@@ -98,6 +109,7 @@ async function scenary(){
             </div>
         </div>`;
 
+        document.getElementById("message").value = "";
         save(count, responseGPT)
     } catch (error) {
         sectionMessages.innerHTML = "Erro ao gerar o script.";
@@ -110,7 +122,13 @@ async function history(){
     const originaltext = OriginalResponseGPT;
     const options = op00;
     const prompt = Originalprompt;
-    const userInputMessage = "Elabore mais a historia do jogo jogo";
+    let userInputMessage = document.getElementById("message").value;
+    if(userInputMessage !== ""){
+        userInputMessage = "Elabore mais a historia do jogo com base nesso na seguinte ideia: "  + userInputMessage;
+    }  else{
+        userInputMessage = "Elabore mais a historia do jogo";
+    }
+    
 
     const characterButton = document.getElementById("history-buttom");
     characterButton.disabled = true;
@@ -138,6 +156,7 @@ async function history(){
             </div>
         </div>`;
 
+        document.getElementById("message").value = "";
         save(count, responseGPT)
     } catch (error) {
         sectionMessages.innerHTML = "Erro ao gerar o script.";
@@ -190,18 +209,23 @@ async function rewrite(button){
     const originaltext = OriginalResponseGPT;
     const options = op00;
     const prompt = Originalprompt;
-    const userInputMessage = document.getElementById("message").value;
 
     const container = button.closest(".border"); // pega o bloco atual
     const input = container.querySelector("input[name='question']");
     const textarea = container.querySelector("textarea");
 
-    const newPrompt = input.value;
+    let userInputMessage = input.value;
+    if(userInputMessage !== ""){
+        userInputMessage = "Reescreva com base nisso: "  + userInputMessage + "o texto :" + textarea;
+    }  else{
+        userInputMessage = "Reescreva o texto:" + textarea;
+    }
+    
     const index = parseInt(button.getAttribute("data-index"));
 
-
     try {
-        const responseGPT = await postMessageGPT(OriginalResponseGPT, newPrompt, op00, Originalprompt);
+        const responseGPT = await postMessageGPT(originaltext, userInputMessage, options, prompt);
+
         textarea.value = responseGPT; // atualiza só esse textarea
 
         if (!isNaN(index)) {
@@ -297,7 +321,7 @@ async function postMessageGPT(originaltext, userInputMessage, options, prompt) {
     const body = {
         messages: [
             {
-                content: `Com base no seguinte texto "${originaltext}" "${userInputMessage}", lembrando que é um jogo de video game "${options}" basenado em "${prompt}"`,
+                content: `Com base no seguinte texto "${originaltext}" "${userInputMessage}", lembrando que é um jogo de video game "${options}" baseado em "${prompt}"`,
                 role: "system"
             }
         ],
